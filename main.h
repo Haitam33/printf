@@ -5,6 +5,7 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <string.h>
+#include <stddef.h>
 
 int _printf(const char *format, ...);
 char *str_rev (char *str);

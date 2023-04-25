@@ -1,3 +1,5 @@
+#include "main.h"
+
 char *str_rev (char *str)
 {
         long int i;

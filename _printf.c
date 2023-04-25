@@ -1,20 +1,18 @@
-#include <stdarg.h>
-#include <limits.h>
 #include "main.h"
 
-int _printf(char * str, ...)
+int _printf(const char *format, ...)
 {
   va_list vl;
   long int i = 0, j=0;
   char buff[100]={0}, tmp[100];
   char * str_arg;
 
-  va_start( vl, str );
-  while (str && str[i])
+  va_start( vl, format );
+  while (format && format[i])
   {
-    if(str[i] == '%'){
+    if(format[i] == '%'){
       i++;
-      switch (str[i]) {
+      switch (format[i]) {
         /* Convert char */
         case 'c': {
           buff[j] = (char)va_arg( vl,long int );
@@ -54,7 +52,7 @@ int _printf(char * str, ...)
       }
     }
 	else {
-      buff[j] =str[i];
+      buff[j] =format[i];
       j++;
     }
     i++;
