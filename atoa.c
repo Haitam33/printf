@@ -1,3 +1,5 @@
+#include "main.h"
+
 char * _itoa(long int i, char *strout, int base)
 {
   char *str = strout;

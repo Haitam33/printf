@@ -1,3 +1,5 @@
+#include "main.h"
+
 char * _itoau(long int i, char *strout, int base)
 {
   char *str = strout;
