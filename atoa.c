@@ -1,4 +1,11 @@
 #include "main.h"
+/**
+ * _itoa - convert integer to character
+ * @i: input
+ * @strout: char
+ * @base: integer
+ * Return: strout
+ */
 
 char *_itoa(long int i, char *strout, int base)
 {
