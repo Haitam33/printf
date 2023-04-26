@@ -8,6 +8,7 @@ char *str_rev(char *str)
 
 	if (!str)
 		return (NULL);
+
 	while (str[len] != '\0')
 	{
 	  len++;
