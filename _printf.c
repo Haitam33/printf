@@ -46,6 +46,13 @@ int _printf(const char *format, ...)
 						  j += strlen(str_arg);
 					break;
 					}
+					/* Convert to binaire */
+				case 'd':
+					{
+						_itoa((int)va_arg(vl, long int), tmp, 2);
+						strcpy(&buff[j], tmp);
+						j += strlen(tmp);
+
 					  /* case % */
 				case '%':
 					{
