@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+* _printf - a function that produces output according to a format.
+* @format: a character string
+* Return: buff or -1 if format is NULL
+*/
+
 int _printf(const char *format, ...)
 {
 
