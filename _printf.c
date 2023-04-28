@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			switch (str[i])
+			switch (format[i])
 			{
 				/* Convert char */
 				case 'c':
@@ -48,7 +48,7 @@ int _printf(const char *format, ...)
 						break;
 					}
 					/* Convert hex Lowercase*/
-	case 'x':
+				case 'x':
 					{
 						_itoa(va_arg(vl, long int), tmp, 16);
 						strcpy(&buff[j], tmp);
@@ -56,7 +56,7 @@ int _printf(const char *format, ...)
 						break;
 					}
 					/* Convert hexadecimal Uppercase */
-	case 'X':
+				case 'X':
 					{
 						_itoau(va_arg(vl, long int), tmp, 16);
 						strcpy(&buff[j], tmp);
@@ -64,7 +64,7 @@ int _printf(const char *format, ...)
 						break;
 					}
 					/* Convert octal */
-	case 'o':
+				case 'o':
 					{
 						_itoa(va_arg(vl, long int), tmp, 8);
 						strcpy(&buff[j], tmp);
@@ -72,7 +72,7 @@ int _printf(const char *format, ...)
 						break;
 					}
 					/* case string */
-	case 's':
+				case 's':
 					{
 						str_arg = va_arg(vl, char*);
 						strcpy(&buff[j], str_arg);
@@ -80,7 +80,7 @@ int _printf(const char *format, ...)
 						break;
 					}
 					/* case % */
-	case '%':
+				case '%':
 					{
 						char *str;
 
@@ -90,7 +90,7 @@ int _printf(const char *format, ...)
 						break;
 					}
 					/* case adresse */
-	case 'p':
+				case 'p':
 					{
 						char a[] = "0x";
 
@@ -104,7 +104,7 @@ int _printf(const char *format, ...)
 						break;
 					}
 					/* case adresse */
-	case 'r':
+				case 'r':
 					{
 						char *str;
 
@@ -115,7 +115,9 @@ int _printf(const char *format, ...)
 						j++;
 						break;
 					}
-					else
+			}
+		}
+			else
 					{
 						buff[j] = format[i];
 						j++;
